@@ -4,6 +4,7 @@ import SubmitButton from '../../../components/SubmitButton';
 import { stepTwoFormAction } from './actions';
 import { useFormState } from 'react-dom';
 import { FormErrors } from '@/types';
+import { useEffect, useState } from 'react';
 
 const initialState: FormErrors = {};
 
@@ -12,6 +13,7 @@ export default function StepTwoForm() {
     stepTwoFormAction,
     initialState
   );
+
   return (
     <form action={formAction} className="flex flex-1 flex-col items-center">
       <div className="flex w-full flex-col gap-8 lg:max-w-[700px]">
@@ -32,6 +34,18 @@ export default function StepTwoForm() {
           required
           description="Must be between 1 and 100"
           type="number"
+          errorMsg={serverErrors?.discount}
+        />
+
+        <Input
+          label="Discount (%)"
+          id="discountTwo"
+          min={1}
+          max={100}
+          required
+          description="Must be between 1 and 100"
+          type="checkbox"
+          checked
           errorMsg={serverErrors?.discount}
         />
 

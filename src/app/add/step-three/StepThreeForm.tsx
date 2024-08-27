@@ -16,14 +16,14 @@ export default function StepThreeForm() {
     <form action={formAction} className="flex flex-1 flex-col items-center">
       <div className="flex w-full flex-col gap-8 lg:max-w-[700px] ">
         <Input
-          label="Contact Name"
+          label="Certifications"
           id="contactName"
           required
           type="text"
           errorMsg={serverErrors?.contactName}
         />
         <Input
-          label="Contact Email"
+          label="Clearance"
           id="contactEmail"
           required
           type="email"
