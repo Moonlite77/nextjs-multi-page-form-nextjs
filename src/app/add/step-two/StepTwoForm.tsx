@@ -38,7 +38,7 @@ export default function StepTwoForm() {
         />
 
         <Input
-          label="Discount (%)"
+          label="Discount 2"
           id="discountTwo"
           min={1}
           max={100}
