@@ -47,7 +47,7 @@ export default function Input({
         )}
       </label>
       <input
-        checked={checked}
+        checked={isChecked}
         className={`w-full rounded-md py-4 px-2 text-slate-900 ${
           errorMsg ? 'border-red-500' : 'border-slate-300'
         } border-2`}
