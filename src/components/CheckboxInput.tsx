@@ -14,10 +14,9 @@ interface InputProps {
   min?: number;
   max?: number;
   errorMsg?: string;
-  checked?: boolean;
+
 }
-export default function Input({
-  checked,
+export default function CheckboxInput({
   label,
   id,
   required,
@@ -32,9 +31,7 @@ export default function Input({
   const [isChecked, setIsChecked] = useState(false);
   const { updateNewDealDetails, newDealData } = useAddDealContext();
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (isChecked === undefined){
-      setIsChecked(false);
-    } else {setIsChecked(!isChecked);}
+    setIsChecked(!isChecked);
     updateNewDealDetails({ [e.target.name]: e.target.value });
   };
 

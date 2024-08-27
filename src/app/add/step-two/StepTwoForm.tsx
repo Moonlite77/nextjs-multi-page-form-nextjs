@@ -1,5 +1,6 @@
 'use client';
 import Input from '@/components/Input';
+import CheckboxInput from '@/components/CheckboxInput';
 import SubmitButton from '../../../components/SubmitButton';
 import { stepTwoFormAction } from './actions';
 import { useFormState } from 'react-dom';
@@ -37,15 +38,14 @@ export default function StepTwoForm() {
           errorMsg={serverErrors?.discount}
         />
 
-        <Input
-          label="Discount 2"
+        <CheckboxInput
+          label="Cool Discount"
           id="discountTwo"
           min={1}
           max={100}
           required
           description="Cool Checkbox"
           type="checkbox"
-          checked
           errorMsg={serverErrors?.discount}
         />
 
