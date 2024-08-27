@@ -13,6 +13,7 @@ export const stepTwoSchema = z.object({
     .number()
     .min(1, 'Discount must be at least 1%')
     .max(100, 'Discount must be at most 100%'),
+  discountTwo: z.coerce.boolean(),
 });
 
 export const stepThreeSchema = z.object({
@@ -33,10 +34,12 @@ export const newDealInitialValuesSchema = z.object({
   link: z.string().optional(),
   coupon: z.string().optional(),
   discount: z.coerce.number().optional(),
+  discountTwo: z.preprocess(value => value === "on", z.coerce.boolean()),
   contactName: z.string().optional(),
   contactEmail: z.string().optional(),
 });
 
+// z.preprocess(value => value === "false", z.boolean()),
 export type NewDealType = z.infer<typeof newDealSchema>;
 export type NewDealInitialValuesType = z.infer<
   typeof newDealInitialValuesSchema

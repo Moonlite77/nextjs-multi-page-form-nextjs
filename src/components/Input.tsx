@@ -1,6 +1,7 @@
 'use client';
 
 import { useAddDealContext } from '@/contexts/addDealContext';
+import { useState } from 'react';
 
 interface InputProps {
   label: string;
@@ -13,8 +14,10 @@ interface InputProps {
   min?: number;
   max?: number;
   errorMsg?: string;
+  checked?: boolean;
 }
 export default function Input({
+  checked,
   label,
   id,
   required,
@@ -26,8 +29,10 @@ export default function Input({
   description,
   errorMsg,
 }: InputProps) {
+  const [isChecked, setIsChecked] = useState(false);
   const { updateNewDealDetails, newDealData } = useAddDealContext();
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setIsChecked(!isChecked);
     updateNewDealDetails({ [e.target.name]: e.target.value });
   };
 
@@ -42,6 +47,7 @@ export default function Input({
         )}
       </label>
       <input
+        checked={checked}
         className={`w-full rounded-md py-4 px-2 text-slate-900 ${
           errorMsg ? 'border-red-500' : 'border-slate-300'
         } border-2`}

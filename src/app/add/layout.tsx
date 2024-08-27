@@ -11,8 +11,8 @@ export default function DealsLayout({
   return (
     <div className="w-full px-2 lg:px-0">
       <PageHeader
-        title="Share a Deal"
-        subtitle="Have an amazing deal or discount tailored for developers? Let us know!"
+        title="Create Avatar"
+        subtitle="Answer a few questions and we'll make you a unique Avatar"
       />
 
       <div className="mt-20 mb-28 flex flex-col gap-x-16 text-white lg:flex-row">
