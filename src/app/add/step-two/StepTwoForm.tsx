@@ -43,7 +43,7 @@ export default function StepTwoForm() {
           min={1}
           max={100}
           required
-          description="Must be between 1 and 100"
+          description="Cool Checkbox"
           type="checkbox"
           checked
           errorMsg={serverErrors?.discount}
