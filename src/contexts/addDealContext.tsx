@@ -18,7 +18,7 @@ const defaultDeal: NewDealInitialValuesType = {
   link: '',
   coupon: '',
   discount: undefined,
-  discountTwo: undefined,
+  discountTwo: false,
   contactName: '',
   contactEmail: '',
 };

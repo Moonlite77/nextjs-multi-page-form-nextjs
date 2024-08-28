@@ -31,8 +31,14 @@ export default function CheckboxInput({
   const [isChecked, setIsChecked] = useState(false);
   const { updateNewDealDetails, newDealData } = useAddDealContext();
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setIsChecked(!isChecked);
-    updateNewDealDetails({ [e.target.name]: e.target.value });
+    const boolFromString = Boolean(e.target.value); //turns the string into bool
+    setIsChecked(boolFromString)
+    console.log(`boolFromString is ${boolFromString}`)
+    console.log(`isChecked is ${isChecked}`)
+    //setIsChecked(!boolFromString)
+    //console.log(`bool string after to calling useState is ${boolFromString}`, boolFromString)
+    //console.log(`isChecked after to calling useState is ${isChecked}`, isChecked)
+    updateNewDealDetails({ [e.target.name]: boolFromString });
   };
 
   return (
