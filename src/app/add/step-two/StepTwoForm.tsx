@@ -43,7 +43,6 @@ export default function StepTwoForm() {
           id="discountTwo"
           min={1}
           max={100}
-          required
           description="Cool Checkbox"
           type="checkbox"
           errorMsg={serverErrors?.discount}
