@@ -19,6 +19,7 @@ const defaultDeal: NewDealInitialValuesType = {
   coupon: '',
   discount: undefined,
   discountTwo: false,
+  coolCheckbox: false,
   contactName: '',
   contactEmail: '',
 };
