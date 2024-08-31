@@ -33,10 +33,10 @@ export default function CheckboxInput({
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setIsChecked(!isChecked)
-    console.log(e.target.name)
     updateNewDealDetails({ [e.target.name]: !isChecked });
   }
 
+  //only need to run this one time upon refresh
   useEffect(
     ()=>{
       console.log('running useEffect')
@@ -48,13 +48,6 @@ export default function CheckboxInput({
       console.log('running useEffect')
     },[newDealData[id]]
   )
-  
-    
-  /*const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setIsChecked(!isChecked)
-    updateNewDealDetails({ [e.target.name]: !isChecked });
-    setForceUpdateKey(forceUpdateKey + 1);
-  };*/
 
   console.log(`isChecked is ${isChecked}`)
 
