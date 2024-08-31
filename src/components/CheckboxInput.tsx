@@ -1,7 +1,7 @@
 'use client';
 
 import { useAddDealContext } from '@/contexts/addDealContext';
-import { useState } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 
 interface InputProps {
   label: string;
@@ -28,18 +28,35 @@ export default function CheckboxInput({
   description,
   errorMsg,
 }: InputProps) {
-  const [isChecked, setIsChecked] = useState(false);
   const { updateNewDealDetails, newDealData } = useAddDealContext();
+  const [isChecked, setIsChecked] = useState(false);
+
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const boolFromString = Boolean(e.target.value); //turns the string into bool
-    setIsChecked(boolFromString)
-    console.log(`boolFromString is ${boolFromString}`)
-    console.log(`isChecked is ${isChecked}`)
-    //setIsChecked(!boolFromString)
-    //console.log(`bool string after to calling useState is ${boolFromString}`, boolFromString)
-    //console.log(`isChecked after to calling useState is ${isChecked}`, isChecked)
-    updateNewDealDetails({ [e.target.name]: boolFromString });
-  };
+    setIsChecked(!isChecked)
+    console.log(e.target.name)
+    updateNewDealDetails({ [e.target.name]: !isChecked });
+  }
+
+  useEffect(
+    ()=>{
+      console.log('running useEffect')
+      console.log(newDealData[id])
+      if(newDealData[id] === true){
+        setIsChecked(true)
+        console.log('newDeal data was true')
+      }
+      console.log('running useEffect')
+    },[newDealData[id]]
+  )
+  
+    
+  /*const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setIsChecked(!isChecked)
+    updateNewDealDetails({ [e.target.name]: !isChecked });
+    setForceUpdateKey(forceUpdateKey + 1);
+  };*/
+
+  console.log(`isChecked is ${isChecked}`)
 
   return (
     <div>
@@ -65,7 +82,6 @@ export default function CheckboxInput({
         min={min}
         max={max}
         onChange={handleInputChange}
-        defaultValue={newDealData[id]}
       />
       <div className="min-h-8 mt-1">
         {errorMsg && (
