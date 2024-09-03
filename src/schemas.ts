@@ -1,10 +1,7 @@
 import z from 'zod';
 
 export const stepOneSchema = z.object({
-  name: z.string().min(1, 'Please enter a name for the product.'),
-  link: z
-    .string()
-    .url('Please enter a valid URL including starting with https://'),
+  charRadio: z.string().optional(),
 });
 
 export const stepTwoSchema = z.object({
@@ -25,6 +22,8 @@ export const stepThreeSchema = z.object({
 
 export const stepFourSchema = z.object({
   coolCheckbox: z.coerce.boolean().optional(),
+  securityPlusCompTIA: z.coerce.boolean().optional(),
+  cisspISC2:z.coerce.boolean().optional(),
 });
 
 export const newDealSchema = z.object({
@@ -36,11 +35,13 @@ export const newDealSchema = z.object({
 
 export const newDealInitialValuesSchema = z.object({
   name: z.string().optional(),
-  link: z.string().optional(),
+  charRadio: z.string().optional(),
   coupon: z.string().optional(),
   discount: z.coerce.number().optional(),
   discountTwo: z.coerce.boolean().optional(),
   coolCheckbox: z.coerce.boolean().optional(),
+  securityPlusCompTIA: z.coerce.boolean().optional(),
+  cisspISC2:z.coerce.boolean().optional(),
   contactName: z.string().optional(),
   contactEmail: z.string().optional(),
 });

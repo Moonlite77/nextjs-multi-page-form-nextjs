@@ -17,12 +17,26 @@ export default function StepFourForm() {
 
   return (
     <form action={formAction} className="flex flex-1 flex-col items-center">
-      <div className="flex w-full flex-col gap-8 lg:max-w-[700px]">
+      <div className="flex w-full flex-col lg:max-w-[700px]">
 
         <CheckboxInput
-          label="checkbox on new page test"
+          label="AWS Cloud Practioner"
           id="coolCheckbox"
           description="Cool New Checkbox"
+          type="checkbox"
+          errorMsg={serverErrors?.discount}
+        />
+        <CheckboxInput
+          label="Sec+"
+          id="securityPlusCompTIA"
+          description="CompTIA security plus"
+          type="checkbox"
+          errorMsg={serverErrors?.discount}
+        />
+        <CheckboxInput
+          label="CISSP"
+          id="cisspISC2"
+          description="CompTIA security plus"
           type="checkbox"
           errorMsg={serverErrors?.discount}
         />
