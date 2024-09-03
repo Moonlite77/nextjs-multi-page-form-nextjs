@@ -14,9 +14,11 @@ interface InputProps {
   min?: number;
   max?: number;
   errorMsg?: string;
+  value?: string;
+  name?: string;
 
 }
-export default function CheckboxInput({
+export default function Radiobuttons({
   label,
   id,
   required,
@@ -27,40 +29,39 @@ export default function CheckboxInput({
   max,
   description,
   errorMsg,
+  value,
+  name,
 }: InputProps) {
   const { updateNewDealDetails, newDealData } = useAddDealContext();
-  const [isChecked, setIsChecked] = useState(false);
+  let myCurrentName = newDealData[name]
+  const [myName, setMyName] = useState('');
+
+  const isRadioSelected = (value: string): boolean => {if(myName == value){ return true} else {return false}}
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setIsChecked(!isChecked)
-    updateNewDealDetails({ [e.target.name]: !isChecked });
+    console.log(e.target.value)
+    updateNewDealDetails({ [e.target.name]: e.target.value });
+    console.log(`new deal data @ charRadio is: ${newDealData[name]}`)
   }
 
   //only need to run this one time upon refresh
-  useEffect(
-    ()=>{
-      console.log('running useEffect')
-      console.log(newDealData[id])
-      if(newDealData[id] === true){
-        setIsChecked(true)
-        console.log('newDeal data was true')
-      }
-      console.log('running useEffect')
-    },[newDealData[id]]
-  )
-
-  console.log(`isChecked is ${isChecked}`)
+useEffect(()=>{
+  console.log(`Before useEffect, data shows: ${newDealData[name]} and local state is ${myName}`)
+  setMyName(newDealData[name]);
+  console.log(`After useEffect, data shows: ${newDealData[name]} and local state is ${myName}`)
+},[newDealData[name]])
+  
 
   return (
     <div className='block'>
       <label className='flexbox pr-4' htmlFor={id}>
-        {label}     <input
-          checked={isChecked}
+        {value}     <input
           className={`rounded-md px-2 text-slate-900 ${
             errorMsg ? 'border-red-500' : 'border-slate-300'
           } border-2`}
           type={type}
-          name={id}
+          value={value}
+          name={name}
           id={id}
           required={required}
           pattern={pattern}
@@ -68,6 +69,7 @@ export default function CheckboxInput({
           min={min}
           max={max}
           onChange={handleInputChange}
+          checked={myName === value}
         />
       </label>
     </div>

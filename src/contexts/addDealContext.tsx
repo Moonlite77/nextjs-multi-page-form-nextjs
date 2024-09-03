@@ -15,11 +15,13 @@ import {
 
 const defaultDeal: NewDealInitialValuesType = {
   name: '',
-  link: '',
+  charRadio: '',
   coupon: '',
   discount: undefined,
   discountTwo: false,
   coolCheckbox: false,
+  securityPlusCompTIA: false,
+  cisspISC2: false,
   contactName: '',
   contactEmail: '',
 };

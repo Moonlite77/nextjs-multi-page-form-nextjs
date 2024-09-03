@@ -1,5 +1,5 @@
 'use client';
-import Input from '@/components/Input';
+import Radiobuttons from '@/components/Radiobuttons';
 import { useFormState } from 'react-dom';
 import { stepOneFormAction } from './actions';
 import { FormErrors } from '@/types';
@@ -16,22 +16,31 @@ export default function StepOneForm() {
   return (
     <form action={formAction} className="flex flex-1 flex-col items-center">
       <div className="flex w-full flex-col gap-8 lg:max-w-[700px] ">
-        <Input
+        <Radiobuttons
           label="Name"
-          id="name"
-          type="text"
-          required
+          id="cybercat"
+          name="charRadio"
+          type="radio"
+          value="cybercat"
           errorMsg={serverErrors?.name}
         />
-        <Input
-          label="Link"
-          id="link"
-          required
-          type="text"
-          description='Must start with "http://" or "https://"'
-          pattern="[Hh][Tt][Tt][Pp][Ss]?:\/\/(?:(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)(?:\.(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)*(?:\.(?:[a-zA-Z\u00a1-\uffff]{2,}))(?::\d{2,5})?(?:\/[^\s]*)?"
-          errorMsg={serverErrors?.link}
+        <Radiobuttons
+          label="Name"
+          id="devdog"
+          name="charRadio"
+          type="radio"
+          value="devdog"
+          errorMsg={serverErrors?.name}
         />
+        <Radiobuttons
+          label="Name"
+          name="charRadio"
+          id="linuxpenguin"
+          type="radio"
+          value="linuxpenguin"
+          errorMsg={serverErrors?.name}
+        />
+
         <SubmitButton text="Continue" />
       </div>
     </form>
