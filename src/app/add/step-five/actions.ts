@@ -18,5 +18,5 @@ export const stepFourFormAction = (
     return errors;
   }
 
-  redirect(AddDealRoutes.CLEARANCE);
+  redirect(AddDealRoutes.CLIENT_EMAIL);
 };

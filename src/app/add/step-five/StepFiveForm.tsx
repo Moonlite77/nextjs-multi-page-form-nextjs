@@ -21,43 +21,35 @@ export default function StepFourForm() {
       <div className="flex w-full flex-col lg:max-w-[700px]">
 
         <Radiobuttons
-          label="Degree"
-          id="highschool"
-          name="degree"
+          label="Clearance"
+          id="none"
+          name="clearance"
           type="radio"
-          value="highschool"
+          value="none"
           errorMsg={serverErrors?.name}
         />
         <Radiobuttons
-          label="Degree"
-          id="associates"
-          name="degree"
+          label="Clearance"
+          id="publicTrust"
+          name="clearance"
           type="radio"
-          value="associates"
+          value="publicTrust"
           errorMsg={serverErrors?.name}
         />
         <Radiobuttons
-          label="Degree"
-          name="degree"
-          id="bachelors"
+          label="Clearance"
+          id="secret"
+          name="clearance"
           type="radio"
-          value="bachelors"
+          value="secret"
           errorMsg={serverErrors?.name}
         />
         <Radiobuttons
-          label="Degree"
-          name="degree"
-          id="masters"
+          label="Clearance"
+          id="topSecret"
+          name="clearance"
           type="radio"
-          value="masters"
-          errorMsg={serverErrors?.name}
-        />
-        <Radiobuttons
-          label="Degree"
-          name="degree"
-          id="phd"
-          type="radio"
-          value="phd"
+          value="topSecret"
           errorMsg={serverErrors?.name}
         />
 

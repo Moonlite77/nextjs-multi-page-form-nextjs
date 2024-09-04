@@ -8,4 +8,6 @@ export enum AddDealRoutes {
   CONTACT_INFO = '/add/step-three',
   COOL_CHECKBOX='/add/step-four',
   REVIEW_DEAL = '/add/review',
+  CLEARANCE = '/add/step-five',
+  CLIENT_EMAIL = '/add/step-six',
 }

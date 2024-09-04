@@ -14,15 +14,13 @@ import {
 } from '@/schemas';
 
 const defaultDeal: NewDealInitialValuesType = {
-  name: '',
   charRadio: '',
-  coupon: '',
-  discount: undefined,
-  discountTwo: false,
-  coolCheckbox: false,
+  yoe: undefined,
+  awsCloudPractitioner: false,
   securityPlusCompTIA: false,
   cisspISC2: false,
-  contactName: '',
+  degree: '',
+  clearance: '',
   contactEmail: '',
 };
 

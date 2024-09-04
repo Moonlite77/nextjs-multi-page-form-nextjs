@@ -29,6 +29,16 @@ const steps = [
     route: 'step-four',
     link: AddDealRoutes.COOL_CHECKBOX,
   },
+  {
+    title: 'Step Five',
+    route: 'step-five',
+    link: AddDealRoutes.CLEARANCE,
+  },
+  {
+    title: 'Step Six',
+    route: 'step-six',
+    link: AddDealRoutes.CLIENT_EMAIL,
+  },
   { title: 'Review', route: 'review', link: AddDealRoutes.REVIEW_DEAL },
 ];
 
