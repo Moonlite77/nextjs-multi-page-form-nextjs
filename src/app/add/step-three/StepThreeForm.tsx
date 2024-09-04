@@ -1,5 +1,6 @@
 'use client';
 import Input from '@/components/Input';
+import CheckboxInput from '@/components/CheckboxInput';
 import SubmitButton from '../../../components/SubmitButton';
 import { stepThreeFormAction } from './actions';
 import { FormErrors } from '@/types';
@@ -15,19 +16,26 @@ export default function StepThreeForm() {
   return (
     <form action={formAction} className="flex flex-1 flex-col items-center">
       <div className="flex w-full flex-col gap-8 lg:max-w-[700px] ">
-        <Input
-          label="Certifications"
-          id="contactName"
-          required
-          type="text"
-          errorMsg={serverErrors?.contactName}
+      <CheckboxInput
+          label="AWS Cloud Practioner"
+          id="coolCheckbox"
+          description="Cool New Checkbox"
+          type="checkbox"
+          errorMsg={serverErrors?.discount}
         />
-        <Input
-          label="Clearance"
-          id="contactEmail"
-          required
-          type="email"
-          errorMsg={serverErrors?.email}
+        <CheckboxInput
+          label="Sec+"
+          id="securityPlusCompTIA"
+          description="CompTIA security plus"
+          type="checkbox"
+          errorMsg={serverErrors?.discount}
+        />
+        <CheckboxInput
+          label="CISSP"
+          id="cisspISC2"
+          description="CompTIA security plus"
+          type="checkbox"
+          errorMsg={serverErrors?.discount}
         />
 
         <SubmitButton text="Continue" />

@@ -11,7 +11,7 @@ export default function ReviewForm() {
   const router = useRouter();
   const { newDealData, resetLocalStorage } = useAddDealContext();
 
-  const { name, link, coupon, discount, contactName, contactEmail } =
+  const { charRadio, yoe, awsCloudPractitioner, securityPlusCompTIA, cisspISC2, degree, clearance, contactEmail } =
     newDealData;
 
   const handleFormSubmit = async (formData: FormData) => {
@@ -34,21 +34,10 @@ export default function ReviewForm() {
       action={handleFormSubmit}
       className="flex flex-1 flex-col gap-2 items-stretch lg:max-w-[700px]"
     >
-      <p className="text-xl md:text-3xl">Name: {name}</p>
-      <p className="font-light text-white/90">
-        Link:{' '}
-        <a
-          href={link}
-          target="_blank"
-          rel="noreferrer"
-          className="font-normal underline hover:text-teal-500"
-        >
-          {link}
-        </a>
-      </p>
-      <p className="text-white/90">Coupon: {coupon}</p>
-      <p className="text-white/90">Discount: {discount}%</p>
-      <p className="text-white/90">Contact Name: {contactName}</p>
+      <p className="text-xl md:text-3xl">Career Field: {charRadio}</p>
+      <p className="text-white/90">Years of Experience: {yoe}</p>
+      <p className="text-white/90">Degree: {degree}</p>
+      <p className="text-white/90">Clearance: {clearance}</p>
       <p className="text-white/90">Contact Email: {contactEmail}</p>
       <SubmitButton text="Submit" submittingText="Submitting..." />
     </form>
