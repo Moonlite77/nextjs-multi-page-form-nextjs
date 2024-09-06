@@ -6,6 +6,7 @@ import { useRouter } from 'next/navigation';
 import toast from 'react-hot-toast';
 import { useAddDealContext } from '@/contexts/addDealContext';
 import { NewDealType } from '@/schemas';
+import CreatePicture from '@/app/add/review/createPicture'
 
 export default function ReviewForm() {
   const router = useRouter();
@@ -14,12 +15,32 @@ export default function ReviewForm() {
   const { charRadio, yoe, awsCloudPractitioner, securityPlusCompTIA, cisspISC2, degree, clearance, contactEmail } =
     newDealData;
 
+
   const handleFormSubmit = async (formData: FormData) => {
     const res = await submitDealAction(newDealData as NewDealType);
     const { redirect, errorMsg, success } = res;
 
     if (success) {
       toast.success('Deal submitted successfully');
+
+
+      //start running CreatePicture here?
+      //
+      const createPicResponse = await CreatePicture(
+        newDealData['charRadio'], 
+        newDealData['yoe'],  
+        newDealData['degree'],
+        newDealData['clearance'],
+        newDealData['contactEmail'],
+        newDealData['awsCloudPractitioner'],
+        newDealData['securityPlusCompTIA'],
+        newDealData['cisspISC2'],
+       );
+      console.log(createPicResponse)
+      //
+      //end running here maybe?
+
+
       resetLocalStorage();
     } else if (errorMsg) {
       toast.error(errorMsg);
@@ -28,6 +49,7 @@ export default function ReviewForm() {
       return router.push(redirect);
     }
   };
+
 
   return (
     <form
