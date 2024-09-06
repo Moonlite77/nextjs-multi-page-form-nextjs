@@ -6,6 +6,8 @@ import {
   stepThreeSchema,
 } from '@/schemas';
 import { AddDealRoutes } from '@/types';
+import { useAddDealContext } from '@/contexts/addDealContext';
+import { string } from 'zod';
 
 interface SubmitDealActionReturnType {
   redirect?: AddDealRoutes;
@@ -16,7 +18,7 @@ interface SubmitDealActionReturnType {
 export const submitDealAction = async (
   deal: NewDealType
 ): Promise<SubmitDealActionReturnType> => {
-  const stepOneValidated = stepOneSchema.safeParse(deal);
+  /*const stepOneValidated = stepOneSchema.safeParse(deal);
   if (!stepOneValidated.success) {
     return {
       redirect: AddDealRoutes.PRODUCT_INFO,
@@ -39,6 +41,7 @@ export const submitDealAction = async (
       errorMsg: 'Please validate contact info.',
     };
   }
+*/
   const retVal = { success: true, redirect: AddDealRoutes.PRODUCT_INFO };
   console.log(retVal);
   return retVal;
