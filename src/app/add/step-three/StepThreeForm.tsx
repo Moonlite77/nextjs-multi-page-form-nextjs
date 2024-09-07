@@ -18,7 +18,7 @@ export default function StepThreeForm() {
       <div className="flex w-full flex-col gap-8 lg:max-w-[700px] ">
       <CheckboxInput
           label="AWS Cloud Practioner"
-          id="coolCheckbox"
+          id="awsCloudPractitioner"
           description="Cool New Checkbox"
           type="checkbox"
           errorMsg={serverErrors?.discount}

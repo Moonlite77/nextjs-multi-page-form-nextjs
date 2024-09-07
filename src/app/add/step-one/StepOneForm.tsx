@@ -21,7 +21,7 @@ export default function StepOneForm() {
           id="cybercat"
           name="charRadio"
           type="radio"
-          value="cybercat"
+          value="Cybersecurity"
           errorMsg={serverErrors?.name}
         />
         <Radiobuttons
@@ -29,7 +29,7 @@ export default function StepOneForm() {
           id="devdog"
           name="charRadio"
           type="radio"
-          value="devdog"
+          value="Software Developement/engineer"
           errorMsg={serverErrors?.name}
         />
         <Radiobuttons
@@ -37,7 +37,7 @@ export default function StepOneForm() {
           name="charRadio"
           id="linuxpenguin"
           type="radio"
-          value="linuxpenguin"
+          value="Linux Administrator"
           errorMsg={serverErrors?.name}
         />
 
