@@ -9,13 +9,13 @@ export default function DealsLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="w-full px-2 lg:px-0">
+    <div className="block w-full h-full">
       <PageHeader
         title="Create Avatar"
         subtitle="Answer a few questions and we'll make you a unique Avatar"
       />
 
-      <div className="mt-20 mb-28 flex flex-col gap-x-16 text-white lg:flex-row">
+      <div className="grid grid-cols gap-x-16 text-white lg:flex-row">
         <StepNavigation />
         <AddDealContextProvider>
           <div className="w-full">{children}</div>

@@ -7,7 +7,7 @@ export default function ImageViewer(){
     const { newDealData } = useAddDealContext()
     const myNewLink = newDealData['openAIURL']
 
-    return <div>
+    return <div className='grid items-center justify-center max-h-3/12 max-w-3/12 mb-10'>
       <Image
       src={myNewLink}
       width={500}

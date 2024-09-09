@@ -10,7 +10,7 @@ export default function ViewImagePage() {
   const { newDealData } = useAddDealContext()
    const myBandAidURL = newDealData['openAIURL']
   return (
-    <div>
+    <div className='max-h-full'>
       <ImageViewer></ImageViewer>
     </div>
   );

@@ -53,17 +53,17 @@ export default function StepNavigation() {
   }, [currentPath]);
 
   return (
-    <div className="mb-12 mt-4 lg:mb-0 min-w-60">
+    <div className="bg-red min-w-60">
       {/* back button */}
       <Link
         href={steps[currentStep - 1]?.link || steps[0].link}
-        className="mb-4 flex items-center gap-2 text-xl disabled:text-white/50 lg:mb-12 lg:gap-5"
+        className="flex items-center gap-2 text-xl disabled:text-white/50"
       >
         Back
       </Link>
 
       {/* list of form steps */}
-      <div className="relative flex flex-row justify-between lg:flex-col lg:justify-start lg:gap-8">
+      <div className="mt-4 mb-10 grid grid-cols-8 justify-between items-center justify-items-center">
         {steps.map((step, i) => (
           <Link
             href={step.link}
@@ -93,12 +93,10 @@ export default function StepNavigation() {
                 }
               )}
             >
-              {step.title}
             </span>
           </Link>
         ))}
         {/* mobile background dashes */}
-        <div className="absolute top-4 flex h-1 w-full border-b border-dashed lg:hidden" />
       </div>
     </div>
   );
