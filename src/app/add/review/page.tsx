@@ -3,7 +3,7 @@ import ReviewForm from './ReviewForm';
 
 export default function StepTwo() {
   return (
-    <div>
+    <div className='grid items-center justify-center'>
       <ReviewForm />
     </div>
   );
