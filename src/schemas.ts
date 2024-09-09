@@ -34,6 +34,7 @@ export const newDealSchema = z.object({
   ...stepTwoSchema.shape,
   ...stepThreeSchema.shape,
   ...stepFourSchema.shape,
+  openAIURL: z.string().optional(),
 });
 
 export const newDealInitialValuesSchema = z.object({
@@ -46,6 +47,7 @@ export const newDealInitialValuesSchema = z.object({
   degree: z.string().optional(),
   clearance: z.string().optional(),
   contactEmail: z.string().optional(),
+  openAIURL: z.string().optional(),
 });
 
 // z.preprocess(value => value === "false", z.boolean()),

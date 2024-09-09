@@ -42,7 +42,7 @@ export const submitDealAction = async (
     };
   }
 */
-  const retVal = { success: true, redirect: AddDealRoutes.PRODUCT_INFO };
+  const retVal = { success: true, redirect: AddDealRoutes.VIEW_IMAGE };
   console.log(retVal);
   return retVal;
 };

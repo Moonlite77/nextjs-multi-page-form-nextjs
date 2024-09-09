@@ -40,6 +40,7 @@ const steps = [
     link: AddDealRoutes.CLIENT_EMAIL,
   },
   { title: 'Review', route: 'review', link: AddDealRoutes.REVIEW_DEAL },
+  { title: 'View', route: 'viewImage', link: AddDealRoutes.VIEW_IMAGE },
 ];
 
 export default function StepNavigation() {
