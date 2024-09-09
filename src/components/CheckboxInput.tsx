@@ -40,7 +40,7 @@ export default function CheckboxInput({
   useEffect(
     ()=>{
       console.log('running useEffect')
-      console.log(newDealData[id])
+
       if(newDealData[id] === true){
         setIsChecked(true)
         console.log('newDeal data was true')

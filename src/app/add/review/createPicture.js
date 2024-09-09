@@ -1,5 +1,9 @@
 'use server'
 
+import OpenAI from "openai";
+import StoreLink from "@/app/add/review/storeLink"
+
+
 export default async function CreatePicture(character, years, education, clearance, email, awsCloudPractitioner, securityPlusCompTIA, cisspISC2){
     
     const mainStringArray = [];
@@ -85,6 +89,14 @@ export default async function CreatePicture(character, years, education, clearan
     let mainPrompt = `A cold wax oil painting of a genius ${mainStringArray[0]}. This ${mainStringArray[0]} is ${mainStringArray[1]}. The ${mainStringArray[0]} has or is holding a${allItems}`
 
     console.log(mainPrompt)
+
+    const openai = new OpenAI();
+    const image = await openai.images.generate({ model: "dall-e-3", prompt: mainPrompt });
+    const returnedURL = image.data[0].url;
+
+
+    console.log(image.data[0].url);
+
     
     console.log(character)
     console.log(years)
@@ -94,5 +106,5 @@ export default async function CreatePicture(character, years, education, clearan
     console.log(awsCloudPractitioner)
     console.log(securityPlusCompTIA)
     console.log(cisspISC2)
-    return "good to go";
+    return returnedURL;
 }

@@ -22,6 +22,7 @@ const defaultDeal: NewDealInitialValuesType = {
   degree: '',
   clearance: '',
   contactEmail: '',
+  openAIURL: '',
 };
 
 const LOCAL_STORAGE_KEY = 'multi-page-form-demo-newDealData';

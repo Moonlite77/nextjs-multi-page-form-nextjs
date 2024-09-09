@@ -7,10 +7,11 @@ import toast from 'react-hot-toast';
 import { useAddDealContext } from '@/contexts/addDealContext';
 import { NewDealType } from '@/schemas';
 import CreatePicture from '@/app/add/review/createPicture'
+import StoreLink from './storeLink';
 
 export default function ReviewForm() {
   const router = useRouter();
-  const { newDealData, resetLocalStorage } = useAddDealContext();
+  const { updateNewDealDetails, newDealData, resetLocalStorage } = useAddDealContext();
 
   const { charRadio, yoe, awsCloudPractitioner, securityPlusCompTIA, cisspISC2, degree, clearance, contactEmail } =
     newDealData;
@@ -37,11 +38,12 @@ export default function ReviewForm() {
         newDealData['cisspISC2'],
        );
       console.log(createPicResponse)
+      updateNewDealDetails({['openAIURL']: createPicResponse})
       //
       //end running here maybe?
 
-
-      resetLocalStorage();
+      //BELOW IS THE CODE TO RESET LOCAL STORAGE... BE CAREFUL. It's commented out to move this logic later in the UX.
+      //resetLocalStorage();
     } else if (errorMsg) {
       toast.error(errorMsg);
     }
@@ -49,7 +51,6 @@ export default function ReviewForm() {
       return router.push(redirect);
     }
   };
-
 
   return (
     <form
@@ -61,7 +62,7 @@ export default function ReviewForm() {
       <p className="text-white/90">Degree: {degree}</p>
       <p className="text-white/90">Clearance: {clearance}</p>
       <p className="text-white/90">Contact Email: {contactEmail}</p>
-      <SubmitButton text="Submit" submittingText="Submitting..." />
+      <SubmitButton text="Submit" />
     </form>
   );
 }
