@@ -2,8 +2,12 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
 import { Toaster } from 'react-hot-toast';
+import { createThirdwebClient } from "thirdweb";
+import { ThirdwebProvider, ConnectButton } from "thirdweb/react";
 
 const inter = Inter({ subsets: ['latin'] });
+
+export const client = createThirdwebClient({ clientId: "958c572f0c8227579ffcc7708353af98" });
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -19,7 +23,10 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <main className="block min-h-screen max-w-full bg-black">
-          {children}
+          <ThirdwebProvider>
+            <ConnectButton client={client} />
+              {children}
+          </ThirdwebProvider>
           <Toaster />
         </main>
       </body>

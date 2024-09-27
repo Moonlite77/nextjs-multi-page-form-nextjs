@@ -21,5 +21,9 @@ const nextConfig = {
 		// !! WARN !!
 		ignoreBuildErrors: true,
 	  },
+	  webpack: (config) => {
+		config.externals.push("pino-pretty");
+		return config;
+	  },
 };
 export default nextConfig;
