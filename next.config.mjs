@@ -12,6 +12,11 @@ const nextConfig = {
 			hostname: 'oaidalleapiprodscus.blob.core.windows.net',
 			port: '',
 		  },
+		  {
+			protocol: 'https',
+			hostname: 'anothercoolpic.s3.us-east-2.amazonaws.com',
+			port: '',
+		  },
 		],
 	  },
 	  typescript: {
