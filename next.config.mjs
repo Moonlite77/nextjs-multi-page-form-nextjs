@@ -18,15 +18,12 @@ const nextConfig = {
 			port: '',
 			pathname: '/**',
 		  },
-<<<<<<< HEAD
 		  {
 			protocol: 'https',
 			hostname: '*.app.github.dev',
 			port: '',
 			pathname: '/**'
 		  }
-=======
->>>>>>> 6d3ed94c11bef62d1676d2b603ae4c3927cca1bf
 		],
 	  },
 	  typescript: {

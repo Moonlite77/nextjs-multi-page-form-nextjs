@@ -2,7 +2,6 @@
 
 import { useAddDealContext } from '@/contexts/addDealContext';
 import Image from 'next/image';
-<<<<<<< HEAD
 import axios from 'axios';
 import { useActiveAccount } from 'thirdweb/react';
 import { useState, useEffect } from 'react';
@@ -69,19 +68,4 @@ export default function ImageViewer() {
       <p>{uploadStatus}</p>
     </div>
   );
-=======
-
-export default function ImageViewer(){
-    const { newDealData } = useAddDealContext()
-    const myNewLink = newDealData['openAIURL']
-
-    return <div className='grid items-center justify-center max-h-3/12 max-w-3/12 mb-10'>
-      <Image
-      src={myNewLink}
-      width={500}
-      height={500}
-      alt="Picture of the author"
-        />
-    </div>
->>>>>>> 6d3ed94c11bef62d1676d2b603ae4c3927cca1bf
 }
