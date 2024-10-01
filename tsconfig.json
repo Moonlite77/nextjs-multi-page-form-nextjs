@@ -21,6 +21,10 @@
       "@/*": ["./src/*"]
     }
   },
+<<<<<<< HEAD
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "./src/types.ts", "src/app/add/view-image/ImageViewer.js"],
+=======
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "./src/types.ts"],
+>>>>>>> 6d3ed94c11bef62d1676d2b603ae4c3927cca1bf
   "exclude": ["node_modules"]
 }
