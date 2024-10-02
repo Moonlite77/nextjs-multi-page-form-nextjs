@@ -25,7 +25,7 @@ export default function StepFourForm() {
           id="none"
           name="clearance"
           type="radio"
-          value="none"
+          value="None"
           errorMsg={serverErrors?.name}
         />
         <Radiobuttons
@@ -33,7 +33,7 @@ export default function StepFourForm() {
           id="publicTrust"
           name="clearance"
           type="radio"
-          value="publicTrust"
+          value="Public Trust"
           errorMsg={serverErrors?.name}
         />
         <Radiobuttons
@@ -41,7 +41,7 @@ export default function StepFourForm() {
           id="secret"
           name="clearance"
           type="radio"
-          value="secret"
+          value="Secret"
           errorMsg={serverErrors?.name}
         />
         <Radiobuttons
@@ -49,7 +49,7 @@ export default function StepFourForm() {
           id="topSecret"
           name="clearance"
           type="radio"
-          value="topSecret"
+          value="Top Secret"
           errorMsg={serverErrors?.name}
         />
 
