@@ -19,5 +19,5 @@ export const stepThreeFormAction = (
     return errors;
   }
 
-  redirect(AddDealRoutes.COOL_CHECKBOX);
+  redirect(AddDealRoutes.CLEARANCE);
 };

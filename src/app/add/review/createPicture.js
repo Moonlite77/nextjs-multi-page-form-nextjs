@@ -61,24 +61,24 @@ export default async function CreatePicture(character, years, education, clearan
     }
 
     switch(clearance){
-        case "none":{
+        case "None":{
             mainItemArray.push(" leather necklace")
             break;
         }
-        case "publicTrust":{
+        case "Public Trust":{
             mainItemArray.push(" silver necklace")
             break;
         }
-        case "secret":{
+        case "Secret":{
             mainItemArray.push(" gold necklace")
             break;
         }
-        case "topSecret":{
+        case "Top Secret":{
             mainItemArray.push(" large purple necklace")
             break;
         }
     }
-    console.log(`item array at is ${mainItemArray}`)
+    console.log(`item array is ${mainItemArray}`)
     
     //constructing prompt
     let allItems = '';

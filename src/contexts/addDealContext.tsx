@@ -16,13 +16,11 @@ import {
 const defaultDeal: NewDealInitialValuesType = {
   charRadio: '',
   yoe: undefined,
-  awsCloudPractitioner: false,
-  securityPlusCompTIA: false,
-  cisspISC2: false,
   degree: '',
   clearance: '',
   contactEmail: '',
   openAIURL: '',
+  resumeText: '',
 };
 
 const LOCAL_STORAGE_KEY = 'multi-page-form-demo-newDealData';

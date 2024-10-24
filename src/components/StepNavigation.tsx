@@ -25,11 +25,6 @@ const steps = [
     link: AddDealRoutes.CONTACT_INFO,
   },
   {
-    title: 'Step Four',
-    route: 'step-four',
-    link: AddDealRoutes.COOL_CHECKBOX,
-  },
-  {
     title: 'Step Five',
     route: 'step-five',
     link: AddDealRoutes.CLEARANCE,
@@ -40,7 +35,7 @@ const steps = [
     link: AddDealRoutes.CLIENT_EMAIL,
   },
   { title: 'Review', route: 'review', link: AddDealRoutes.REVIEW_DEAL },
-  { title: 'View', route: 'viewImage', link: AddDealRoutes.VIEW_IMAGE },
+  { title: 'View', route: 'view-image', link: AddDealRoutes.VIEW_IMAGE },
 ];
 
 export default function StepNavigation() {
@@ -63,7 +58,7 @@ export default function StepNavigation() {
       </Link>
 
       {/* list of form steps */}
-      <div className="mt-4 mb-10 grid grid-cols-8 justify-between items-center justify-items-center">
+      <div className="mt-4 mb-10 grid grid-cols-7 justify-between items-center justify-items-center">
         {steps.map((step, i) => (
           <Link
             href={step.link}
