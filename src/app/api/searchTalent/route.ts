@@ -26,12 +26,13 @@ export async function GET(request: Request) {
   }
 
   try {
+    // Use websearch_to_tsquery for more sophisticated full-text search
     const dbQuery = `
       SELECT wallet_address, email, resume
       FROM users
-      WHERE resume ILIKE $1
+      WHERE to_tsvector('english', resume) @@ websearch_to_tsquery('english', $1)
     `;
-    const result = await pool.query(dbQuery, [`%${query}%`]);
+    const result = await pool.query(dbQuery, [query]);
 
     const imagePromises = result.rows.map(async (user) => {
       const params = {
