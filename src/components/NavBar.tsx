@@ -26,6 +26,11 @@ export function NavBar() {
         </button>
         
         <ul className="space-y-1 w-full">
+        <li>
+            <Link href="/" className="text-white hover:bg-[hsl(var(--primary-foreground))] hover:text-[hsl(var(--primary))] block py-2 px-3 rounded text-center">
+              {isCollapsed ? 'Home' : 'Home'}
+            </Link>
+          </li>
           <li>
             <Link href="/talent-vault" className="text-white hover:bg-[hsl(var(--primary-foreground))] hover:text-[hsl(var(--primary))] block py-2 px-3 rounded text-center">
               {isCollapsed ? 'Vault' : 'Talent Vault'}
