@@ -1,7 +1,19 @@
 import { TalentVault } from '@/components/TalentVault'
 
 async function getTalentData() {
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'
+  let baseUrl = process.env.NEXT_PUBLIC_BASE_URL || ''
+  
+  // Check if we're in a Vercel environment
+  if (process.env.VERCEL_URL) {
+    baseUrl = `https://${process.env.VERCEL_URL}`
+  } else if (!baseUrl) {
+    // Fallback for local development
+    baseUrl = 'http://localhost:3000'
+  }
+
+  // Ensure baseUrl doesn't end with a slash
+  baseUrl = baseUrl.replace(/\/$/, '')
+
   try {
     const res = await fetch(`${baseUrl}/api/getAllTalent`, { 
       cache: 'no-store',
