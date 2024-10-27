@@ -21,7 +21,7 @@ export function TalentVaultGrid({ images }: TalentVaultGridProps) {
           <div key={image.wallet} className="border rounded-lg p-4 flex flex-col items-center">
             {image.imageUrl ? (
               <Image
-                src={image.imageUrl}
+                src={`/s3-image/${image.imageUrl.split('/').slice(-2).join('/')}`}
                 alt={`Image for ${image.email}`}
                 width={300}
                 height={300}
